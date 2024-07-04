@@ -1,17 +1,16 @@
-
-//User function template for C++
+//Back-end complete function template for C++
 
 class Solution {
-public:
-    void reverseInGroups(vector<long long>& arr, int n, int k) {
+  public:
+    // Function to reverse every sub-array group of size k.
+    void reverseInGroups(vector<long long int>& arr, int k) {
+        int n = arr.size();
         for (int i = 0; i < n; i += k) {
-            int left = i;
-            int right = min(i + k - 1, n - 1);
-            while (left < right) {
-                swap(arr[left], arr[right]);
-                left++;
-                right--;
-            }
+            // Determine the end point for the current sub-array.
+            int end = min(i + k, n);
+            // Reverse the sub-array from arr[i] to arr[end - 1].
+            reverse(arr.begin() + i, arr.begin() + end);
         }
     }
 };
+;
