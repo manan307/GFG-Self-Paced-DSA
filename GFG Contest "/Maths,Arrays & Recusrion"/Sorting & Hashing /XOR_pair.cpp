@@ -1,23 +1,8 @@
-#include <bits/stdc++.h>
-using namespace std;
 
-int main() {
-	//code
-	int t;
-	cin>>t;
-	
-	while(t--){
-	    
-	    int n,c;
-	    cin>>n>>c;
-	    
-	    int arr[n];
-	    
-	    for(int i=0; i<n; i++){
-	        cin>>arr[i];
-	    }
-	    
-	    unordered_set<int> s;
+
+bool pairExists(int arr[], int n, int c)
+{
+    unordered_set<int> s;
 	    
 	    bool flag = false;
 	    
@@ -30,12 +15,6 @@ int main() {
 	        
 	        s.insert(arr[i]);
 	    }
-	    
-	    if(flag){
-	        cout<<"Yes"<<endl;
-	    }else{
-	        cout<<"No"<<endl;
-	    }
-	}
-	return 0;
+	    return flag;
+    //Your code here
 }
